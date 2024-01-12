@@ -1,0 +1,23 @@
+
+<app-product></app-product>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<div class="box p-5">
+    <input [(ngModel)]="searchText" type="search" placeholder="Search" ><!---->
+    <button ><i (click)="onclick()" class="fa fa-search"></i></button><!---->
+</div>
+<div *ngIf="bol==true" class="card-container" >
+
+<div  class="card mb-3"  *ngFor="let i of pl"   style="max-width: 18rem;"><!--*ngFor="let i of pl|searchproduct:searchText"-->
+    <div class="card-header">Product ID:{{i.pid}} </div>
+    <div class="card-body">
+      <h5 class="card-title">Product name : {{i.pname}} </h5>
+      <p class="card-text">Product Description : {{i.pdesc}} </p>
+      <p class="card-text" >Qty: {{i.pqty}} </p>
+      <p class="card-text">Category: {{i.pcategory}} </p>
+      <p class="card-text">Product price : {{i.price}} </p>
+    </div>
+  </div>
+</div>
+
+
+

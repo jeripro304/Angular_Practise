@@ -1,0 +1,28 @@
+<div class="container">
+    <h4>Reactive forms</h4>
+    <input type="text"   [formControl]="myname" > {{myname.value}}
+
+    <form [formGroup]="empform">
+        <h4>Form Group</h4>
+        <div>
+    Employee id        :    <input type="text" formControlName="eid" [class.is-invalid]="eid.valid && eid.touched" ><br>
+    <div *ngIf="eid.touched" >
+        <div *ngIf="eid.invalid">
+            <small style="color: red;" *ngIf="eid.errors?.['required']">Employee id cant be empty</small>
+            <small style="color: rgb(255, 0, 0);" *ngIf="eid.errors?.['minlength']">Employee name >3</small>
+            <small style="color: red;" *ngIf="eid.errors?.['pattern']">should be in the format E123</small>
+
+        </div>
+    </div> 
+    </div>
+    EMployee name      :    <input type="text" formControlName="ename" ><br>
+    Salary             :    <input type="text" formControlName="salary" ><br>
+    Department options :<select  formControlName="dept" >
+                        <option *ngFor="let i of department" value="{{i}}"> {{i}} </option>
+    </select>
+</form>
+    {{empform.value|json}}
+
+    
+
+</div>

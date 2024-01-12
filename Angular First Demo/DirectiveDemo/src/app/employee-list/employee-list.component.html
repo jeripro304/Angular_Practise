@@ -1,0 +1,79 @@
+<h3>Employees list</h3>
+
+<!-- <form action="" #myform="ngForm" >
+    <input type="text" #uname="ngModel" >
+</form> -->
+
+<form #myform="ngForm"  (ngSubmit)="dataSubmited()" >
+    Employees {{employees|json}}
+    <div class="mb-3">
+        <h4>Employee Form</h4>
+        <label for="formGroupExampleInput" class="form-label"> ID</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your ID" #id="ngModel" name="id" [(ngModel)]="employees.eid" required [class.is-invalid]="id.invalid && id.touched" pattern="^[E].[0-9]+">
+        
+      </div>
+      <div class="mb-3"> 
+        <label for="formGroupExampleInput2" class="form-label">NAME</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your name" #uname="ngModel" name="name"   [(ngModel)]="employees.ename">
+      </div>
+      
+      <div class="mb-3">
+        <label for="formGroupExampleInput4" class="form-label">SALARY</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your salary" #salary="ngModel" name="salary"  [(ngModel)]="employees.salary" >
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput3" class="form-label">DEPARTMENT </label>
+        <select #department="ngModel" name="dept"  [(ngModel)]="employees.dept">
+            <option *ngFor="let i of depart" value="{{i}}"  > {{i}} </option>
+        </select>
+        <button type="submit" class="btn btn-primary" [disabled]="myform.form.invalid || hasError">Add Employee</button> 
+      <button type="reset" class="btn btn-danger">Clear</button>
+      </div>
+      
+</form>
+
+Form  {{myform.value|json}}
+
+<table>
+    <thead>
+      <tr>
+        <th> EMPLOYEE ID</th>
+        <th>NAME</th>
+        <th>SALARY</th>
+        <th>DEPT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of emplist">
+          <td> {{e.eid}} </td>
+          <td> {{e.ename}} </td>
+          <td> {{e.salary}} </td>
+          <td> {{e.dept}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+<div >
+    <!-- <div class="card" *ngFor="let emp of employees">
+        <app-employee [employee]="emp" ></app-employee>
+    </div> -->
+
+
+    <div class="select-container">
+        <button (click)="addEmp()">Add Employee</button> 
+        
+    </div><br>
+    <div class="select-container"> 
+        <select class="select" [(ngModel)]="dept" name="dept">
+            <option value="all">ALL</option>
+            <option *ngFor="let d of depts" value="{{d}}"> {{d}} </option>
+        </select>
+    </div>
+    
+<br><br>
+    <div class="card" *ngFor="let emp of emplist|deptfilter:dept">
+        <app-employee [employee]="emp" ></app-employee>
+    </div>
+
+
+</div>

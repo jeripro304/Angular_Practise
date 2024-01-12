@@ -1,0 +1,29 @@
+.table-container{
+    width: 80%;
+    margin: auto;
+}
+.table-active{
+    border: 1px solid white;
+}
+.Edit{
+    width: 100px;
+   
+}
+.delete{
+    width: 100px;
+    
+}
+.edit-button{
+    background-color: rgb(12, 229, 245);
+    border-radius: 8px;
+    margin: auto;
+}
+.btn-danger{
+    background-color: red;
+    border-radius: 8px;
+    margin: auto;
+}
+.form-label{
+    padding: 10px;
+    font-weight: bold;
+}

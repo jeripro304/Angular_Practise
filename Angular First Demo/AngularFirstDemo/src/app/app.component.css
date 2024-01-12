@@ -1,0 +1,33 @@
+.main{
+    background-color: rgb(235, 58, 235);
+    border: 3px solid black;
+}
+
+.tsize{
+    height: 50px;
+    width: 50%;
+}
+
+div{
+    background-color: aqua;
+}
+p{
+    text-align: center;
+}
+button{
+    align-items: center;
+}
+
+.it{
+    background-color: aquamarine;
+}
+.hr{
+    background-color: rgb(80, 80, 205);
+}
+.mgr{
+    background-color: rgb(255, 67, 67);
+}
+
+table{
+    margin: auto;
+}

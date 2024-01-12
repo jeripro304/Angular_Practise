@@ -1,0 +1,11 @@
+
+<div appDept [dept]="employee.dept" class="card" style="width: 18rem;">
+    <h3>Employee  {{employee.ename}} details
+    </h3>
+    <ul  class="list-group list-group-flush">
+      <li  appDept [dept]="employee.dept" class="list-group-item"> ID : {{employee.eid}} </li>
+      <li  appDept [dept]="employee.dept" class="list-group-item">NAME : {{employee.ename}} </li>
+      <li  appDept [dept]="employee.dept" class="list-group-item">DEPARTMENT: {{employee.dept}} </li>
+      <li  appDept [dept]="employee.dept" class="list-group-item">SALARY : {{employee.salary}} </li>
+    </ul>
+  </div>
